@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HealthBot - Early Disease Detection</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <i class="fas fa-heartbeat"></i>
+      <span>HealthBot</span>
+    </div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#chatbot">Check Symptoms</a>
+    </nav>
+    <div class="header-badge">AI Powered</div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div class="hero-tag"><i class="fas fa-shield-alt"></i> Early Detection Saves Lives</div>
+      <h1>Your Personal <span class="gradient-text">Health Assistant</span></h1>
+      <p>Describe your symptoms and get instant AI-powered insights about possible conditions. Not a replacement for professional medical advice.</p>
+      <div class="hero-buttons">
+        <a href="#chatbot" class="btn-primary"><i class="fas fa-comments"></i> Start Symptom Check</a>
+        <a href="#about" class="btn-secondary">Learn More</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><strong>50+</strong><span>Diseases</span></div>
+        <div class="stat"><strong>100+</strong><span>Symptoms</span></div>
+        <div class="stat"><strong>Free</strong><span>Always</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="pulse-ring"></div>
+      <div class="hero-icon"><i class="fas fa-stethoscope"></i></div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <h2>How It Works</h2>
+    <p class="section-sub">Three simple steps to understand your health better</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-icon"><i class="fas fa-keyboard"></i></div>
+        <h3>Describe Symptoms</h3>
+        <p>Type your symptoms in plain English. Our AI understands natural language.</p>
+      </div>
+      <div class="step">
+        <div class="step-icon"><i class="fas fa-brain"></i></div>
+        <h3>AI Analysis</h3>
+        <p>Our symptom engine matches your input against a medical knowledge base.</p>
+      </div>
+      <div class="step">
+        <div class="step-icon"><i class="fas fa-file-medical"></i></div>
+        <h3>Get Insights</h3>
+        <p>Receive possible conditions, severity levels, and recommended next steps.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chatbot Section -->
+  <section class="chatbot-section" id="chatbot">
+    <div class="chatbot-wrapper">
+      <div class="chatbot-header">
+        <div class="bot-info">
+          <div class="bot-avatar"><i class="fas fa-robot"></i></div>
+          <div>
+            <strong>HealthBot AI</strong>
+            <span class="online-dot"></span>
+            <p>Online • Ready to help</p>
+          </div>
+        </div>
+        <button class="clear-btn" onclick="clearChat()"><i class="fas fa-trash"></i> Clear</button>
+      </div>
+
+      <div class="chat-messages" id="chatMessages">
+        <!-- Messages injected by JS -->
+      </div>
+
+      <div class="symptom-chips" id="symptomChips">
+        <span class="chip-label">Quick select:</span>
+        <button class="chip" onclick="addChip('fever')">Fever</button>
+        <button class="chip" onclick="addChip('headache')">Headache</button>
+        <button class="chip" onclick="addChip('cough')">Cough</button>
+        <button class="chip" onclick="addChip('fatigue')">Fatigue</button>
+        <button class="chip" onclick="addChip('nausea')">Nausea</button>
+        <button class="chip" onclick="addChip('chest pain')">Chest Pain</button>
+        <button class="chip" onclick="addChip('shortness of breath')">Shortness of Breath</button>
+        <button class="chip" onclick="addChip('sore throat')">Sore Throat</button>
+      </div>
+
+      <div class="chat-input-area">
+        <input type="text" id="userInput" placeholder="Describe your symptoms (e.g. fever, headache, cough)..." 
+               onkeydown="if(event.key==='Enter') sendMessage()" />
+        <button class="send-btn" onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+      </div>
+
+      <p class="disclaimer"><i class="fas fa-info-circle"></i> This tool is for informational purposes only. Always consult a qualified healthcare professional.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo"><i class="fas fa-heartbeat"></i> HealthBot</div>
+      <p>Built for early disease awareness. Not a substitute for professional medical advice.</p>
+      <p class="footer-copy">© 2026 HealthBot · Hackathon Project</p>
+    </div>
+  </footer>
+
+  <script src="chatbot.js"></script>
+</body>
+</html>
